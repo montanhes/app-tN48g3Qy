@@ -26,7 +26,7 @@ class StoreProductRequest extends FormRequest
         return [
             'name' => 'required|string|max:100',
             'sku' => 'required|string|max:10|unique:App\Models\Product,sku',
-            'quantity' => 'required|numeric',
+            'quantity' => 'required|numeric|gt:0',
         ];
     }
 
@@ -45,6 +45,7 @@ class StoreProductRequest extends FormRequest
             'sku.unique' => 'O campo "sku" deve ser único.',
             'quantity.required' => 'O campo "quantity" é obrigatório.',
             'quantity.numeric' => 'O campo "quantity" deve ser numérico.',
+            'quantity.gt' => 'O campo "quantity" deve ser maior que 0 (zero).',
         ];
     }
 }
