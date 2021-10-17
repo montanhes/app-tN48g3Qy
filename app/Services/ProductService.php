@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use App\Models\ProductHistory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\ValidationException;
 
 class ProductService
 {
@@ -45,7 +46,7 @@ class ProductService
         $operation = intval($request->operation);
 
         if($operation == Operation::OUT && $product->quantity < $request->quantity) {
-            return response()->json('Quantidade existente no estoque menor que a quantidade que deseja reduzir.', 422);
+            return throw ValidationException::withMessages(['quantity' => 'Quantidade existente no estoque menor que a quantidade que deseja reduzir.']);
         }
 
         try {
