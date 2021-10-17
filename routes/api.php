@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('products', ProductController::class);
 Route::post('/products/{product:sku}/moves', [ProductController::class, 'handleProductQuantity'])->name('products.moves');
+Route::get('/products/{product:sku}/history', [ProductController::class, 'getProductHistory'])->name('products.history');

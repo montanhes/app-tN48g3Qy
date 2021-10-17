@@ -75,4 +75,9 @@ class ProductController extends Controller
     {
         return $this->productService->handleProductQuantity($product, $request);
     }
+
+    public function getProductHistory(Product $product)
+    {
+        return response()->json($product->productHistories()->paginate());
+    }
 }
