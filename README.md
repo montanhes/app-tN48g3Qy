@@ -24,10 +24,11 @@ DB_PASSWORD=xxxxxxxx
 
 Em seguida executar os demais comandos:
 
-`php artisan key:generate`
-`php artisan migrate`
-`php artisan serve`
-
+```
+php artisan key:generate
+php artisan migrate
+php artisan serve
+```
 
 ## Endpoints
 
