@@ -32,6 +32,8 @@ php artisan serve
 
 ## Endpoints
 
+Incluí na raiz do projeto o arquivo `app-insomnia.json`, nele contém as rotas para facilitar o uso caso desejarem, basta importar no insominia e usar.
+
 Rota   | Método | Body | Headers
 --------- | ------ | ----- | ------
 /api/products | POST | name: string (100 caracteres)<br/><br/> sku:string (10 caracteres)<br/><br/> quantity: decimal | Content-Type: multipart/form-data <br/><br/> Accept: application/json
