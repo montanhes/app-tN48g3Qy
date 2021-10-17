@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Services\ProductService;
 use App\Http\Requests\StoreProductRequest;
@@ -68,5 +69,10 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function handleProductQuantity(Request $request, Product $product)
+    {
+        return $this->productService->handleProductQuantity($product, $request);
     }
 }
