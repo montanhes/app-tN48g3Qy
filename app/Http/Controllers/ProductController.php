@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Services\ProductService;
 use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\MovesProductRequest;
 
 class ProductController extends Controller
 {
@@ -71,7 +72,7 @@ class ProductController extends Controller
         //
     }
 
-    public function handleProductQuantity(Request $request, Product $product)
+    public function handleProductQuantity(MovesProductRequest $request, Product $product)
     {
         return $this->productService->handleProductQuantity($product, $request);
     }
